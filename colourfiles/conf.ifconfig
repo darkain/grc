@@ -1,15 +1,22 @@
-
 # ipv4
 regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
-colours=bold green
+colours=bold yellow
 =======
 # ipv6
 regexp=\b[0-9a-fA-F]{1,4}(\:\:?[0-9a-fA-F]{1,4})+
-colours=bold green
+colours=bold yellow
+=======
+# netmask
+regexp=0x[0-9a-f]{8}
+colours=magenta
+=======
+# prefix length
+regexp=(prefixlen \d{1,3})
+colours=magenta
 =======
 # hwaddr
 regexp=(\d|[a-f]){2}(\:(\d|[a-f]){2}){5}
-colours=yellow
+colours=magenta
 =======
 # size
 regexp=\d+(\.\d+)?\s(T|G|M|K|)i?B
@@ -19,19 +26,39 @@ colours=yellow
 regexp=^([a-z0-9_]{2,}\d*):?\s
 colours=bold green
 =======
+# interface
+regexp=(%[a-z0-9_]{2,}\d*)\s
+colours=bold green
+=======
 #ip disc
-regexp=(inet6?|netmask|broadcast)
+regexp=(inet6?|netmask|broadcast|ether|hwaddr)
 colours=cyan
 =======
-#flags
+# flags
+regexp=flags=
+colours=cyan
+=======
+# properties
+regexp=(\t[a-z]*:|\t[a-z0-9 ]*=)
+colours=cyan
+=======
+# values
+regexp=(=\d{1,9})
+colours=bold red
+=======
+# separators
+regexp=(=|%)
+colours=bold white
+=======
+# flag list
 regexp=(?<=[,<])[^,]+?(?=[,>])
-colours=blue
+colours=bold blue
 =======
 # mtu
 regexp=(?i)mtu(\s|\:)\d+
 colours=green
 =======
-#errors
+# errors
 regexp=errors(\s|\:)\d+
 colours=red
 =======
