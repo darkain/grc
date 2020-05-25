@@ -23,7 +23,7 @@ regexp=\d+(\.\d+)?\s(T|G|M|K|)i?B
 colours=yellow
 =======
 # interface
-regexp=^([a-z0-9_]{2,}\d*):?\s
+regexp=^([a-z0-9_.]{2,}\d*):?\s
 colours=bold green
 =======
 # interface
